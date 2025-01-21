@@ -1,0 +1,366 @@
+body {
+    margin: 0;
+    background-image: url('assets/bg10.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: Azure;
+    font-size: 1.5em;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-weight: 700;
+    color: white;
+    text-align: center;
+    text-transform: none; /* Change to sentence case */
+  }
+  
+  h1 {
+    margin-bottom: 10px;
+    font-size: 3em; /* Increased font size */
+    font-family: 'Fjalla One', sans-serif;
+    text-transform: none;
+  }
+  
+  p {
+    font-weight: 300;
+    font-size: 1.6em;
+    margin-top: 20px;
+  }
+  
+  .btn {
+    display: inline-block;
+    background-color: rgba(252, 252, 252, 0.15);
+    font-size: 0.6em; /* Reduced font size */
+    padding: 8px 30px; /* Reduced padding */
+    border: 2px solid white;
+    color: #ffffff;
+    text-decoration: none;
+    margin: 10px 0; /* Adjust margin */
+    transition: all .6s;
+    text-align: center;
+    border-radius: 100px;
+    font-weight: 800;
+    text-transform: none; /* Remove all caps */
+    transform: translateX(-20px); /* Move button slightly to the left */
+  }
+  .btn:hover {
+    background: #0b7069;
+    color: #f9f9f9;
+  }
+  div {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+  }
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
+    align-items: flex-end; /* Align content to the right */
+    height: 100vh; /* Full viewport height */
+    padding-top: 0; /* Remove padding to account for fixed header */
+    width: 100%; /* Ensure container fits the window width */
+    font-size: 0.8em; /* Reduced font size */
+    transform: translateX(-20px); /* Move content slightly to the left */
+  }
+  
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px; /* Reduced padding */
+    background-color: white;
+    width: 100%;
+    box-sizing: border-box;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000; /* Ensure header is above everything else */
+  }
+  
+  header:hover {
+    background-color: #f1f1f1; /* Add hover effect */
+  }
+  
+  .logo {
+    max-width: 50px; /* Reduced logo size */
+    height: auto;
+  }
+  
+  nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 35px; /* Adjusted gap between links */
+  }
+  
+  nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 700;
+    font-size: 0.5em; /* Further reduced font size */
+    text-transform: none; /* Remove all caps */
+    display: flex;
+    align-items: center;
+    transition: color 0.3s ease, background-color 0.3s ease; /* Add transition for hover effect */
+  }
+  
+  nav a::after {
+    content: ' ▼'; /* Dropdown icon */
+    font-size: 0.5em; /* Match font size */
+    margin-left: 5px; /* Space between text and icon */
+    color: #0b7069; /* Change icon color */
+  }
+  
+  nav a[href="#contact"]::after {
+    content: ''; /* Remove icon for "About Bimi" */
+  }
+  
+  nav a:hover {
+    color: #0b7069 !important; /* Change color on hover */
+    animation: breathing 3s ease-in-out infinite;
+  }
+  
+  @keyframes breathing {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  .dropdown-content.show {
+    display: block;
+    opacity: 1;
+  }
+  .dropdown {
+    position: relative;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+    z-index: 1;
+    min-width: 160px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 0.3em; /* Match font size */
+  }
+  
+  .dropdown-content a:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+    opacity: 1;
+  }
+  
+  .dropdown-content a {
+    color: #333;
+  }
+  
+  .chat-floater {
+    position: absolute; /* Change to absolute */
+    bottom: 20px;
+    right: 20px;
+    padding: 10px;
+    border-radius: 50%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add transition for hover effect */
+  }
+  
+  .chat-floater .material-symbols-outlined {
+    font-size: 40px; /* Adjusted size for chat icon */
+    color: white; /* Set icon color to white */
+    animation: floating 3s ease-in-out infinite; /* Add floating effect */
+  }
+  
+  @keyframes floating {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  
+  .chat-floater:hover {
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); /* Add shadow effect on hover */
+  }
+  
+  .material-symbols-outlined {
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24;
+  }
+  
+  /* Mobile responsiveness */
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 2em; /* Adjust font size for mobile */
+    }
+  
+    .btn {
+      font-size: 0.6em; /* Adjust font size for mobile */
+      padding: 6px 20px; /* Adjust padding for mobile */
+    }
+  
+    nav ul {
+      display: none; /* Hide nav links */
+    }
+  
+    .toolbar {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background-color: white;
+      padding: 10px 0;
+      box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.1);
+    }
+  
+    .toolbar a {
+      color: #333;
+      font-weight: 700;
+      font-size: 0.8em;
+      text-decoration: none;
+    }
+  
+    .chat-floater .material-symbols-outlined {
+      font-size: 30px; /* Adjust size for mobile */
+    }
+  }
+  
+  /* New section with random questions and video placeholder */
+  .qa-video-section {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: rgb(205, 229, 225); /* Remove transparency */
+    color: #333;
+    margin-top: 20px;
+  }
+  
+  .qa-container, .video-container {
+    width: 45%;
+  }
+  
+  .qa-container h2, .video-container h2 {
+    font-size: 1em; /* Reduced font size */
+    margin-bottom: 10px;
+  }
+  
+  #qa-content {
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    font-size: 0.4em; /* Reduced font size */
+  }
+  
+  #generate-qa {
+    padding: 10px 20px;
+    background-color: #0b7069;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.2em; /* Reduced font size */
+  }
+  
+  #generate-qa:hover {
+    background-color: #0bb689;
+  }
+  
+  .video-placeholder {
+    width: 100%;
+    height: 200px;
+    background-color: #ddd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    color: #666;
+    font-size: 1em; /* Reduced font size */
+  }
+  
+  #access-chatbot {
+    padding: 3px 8px; /* Reduced padding */
+    background-color: #0b7069;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.7em; /* Reduced font size */
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+  }
+  
+  #access-chatbot:hover {
+    background-color: #0bb689;
+  }
+  
+  /* ...existing code... */
+  
+  .reveal-section {
+    height: auto; /* Adjust height */
+    padding: 20px 0; /* Add padding for spacing */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background: none; /* Remove background */
+  }
+  
+  .reveal-text {
+    font-size: 10em; /* Increase font size */
+    font-weight: 1000; /* Make it even bolder */
+    color: white; /* Change color to white */
+    opacity: 0;
+    transform: scale(0.2); /* Start with smaller scale */
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+  }
+  
+  .reveal-section.revealed .reveal-text {
+    opacity: 1;
+    transform: scale(1); /* Grow to normal size */
+  }
+  
+  /* ...existing code... */
+  
+  .breathe-image.left-aligned {
+    width: 700px; /* Increase size */
+    height: auto;
+    margin-right: 10px; /* Space between image and text */
+    animation: breathing 10s ease-in-out infinite;
+    position: absolute;
+    left: 70px; /* Move to the right */
+    top: 70%; /* Move down */
+    transform: translateY(-50%);
+    margin-bottom: 50px;
+  }
+  
+  .breathe-image.centered {
+    top: 20%; /* Move up */
+    transform: translateY(-20%); /* Adjust vertical centering */
+  }
+  
