@@ -1,65 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BIMI Homepage</title>
-  <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=forum" />
-  <link rel="icon" href="assets/bimi.png" type="image/png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bimi</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="assets/bimi.png" type="image/png"> <!-- Added favicon -->
+    <script defer src="script.js"></script>
 </head>
 <body>
-  <header>
-    <a href="index.html">
-      <img src="assets/bimi.png" alt="Logo" class="logo">
-    </a>
-    <nav>
-      <ul>
-        <li><a href="#contact">About Bimi</a></li>
-        <li><a href="#elearning">Access e-Learning</a></li>
-        <li><a href="#financial">Fiscal Data</a></li>
-        <li><a href="#economic">Economic Data</a></li>
-        <li><a href="#government">AI Accountability</a></li>
-      </ul>
-    </nav>
-  </header>
-  <section class="container">
-    <div class="content-wrapper">
-      <!-- <img src="assets/AI HP.png" alt="BIMI Image" class="breathe-image left-aligned centered"> -->
-      <h1>Hi, I am Bimi</h1>
-    </div>
-    <p></p>
-    <a class="btn" href="https://bimi.budgit.org" target="_blank">Access Bimi</a>
-  </section>
-  <div class="chat-floater">
-    <a href="mailto:support@bimi.budgit.org" title="support@bimi.budgit.org">
-      <span class="material-symbols-outlined">forum</span>
-    </a>
-  </div>
-  
-  <!-- New section for random questions and video placeholder -->
-  <!--
-  <section class="qa-video-section">
-    <div class="qa-container">
-      <h2>FAQs</h2>
-      <div id="qa-content"></div>
-      <a id="access-chatbot" href="https://bimi.budgit.org" target="_blank" class="btn">Ask More Questions</a>
-    </div>
-    <div class="video-container">
-      <h2>Introducing BIMI</h2>
-      <div class="video-placeholder">
-        <video width="100%" height="200" controls>
-          <source src="assets/vd1.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
-      </div>
-    </div>
-  </section>
+    <div class="cursor"></div> <!-- Added cursor element -->
+    <header class="navbar">
+        <div class="logo">
+            <a href="index.html">
+                <img src="assets/bimi.png" alt="Bimi Logo" style="height: 50px;"> <!-- Increased height -->
+            </a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Products</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </nav>
+        <div class="auth-buttons">
+            <button class="login">Login</button>
+            <button class="signup">Sign Up</button>
+        </div>
+    </header>
+    
+    <section class="hero">
+        <div class="hero-text">
+            <h1>Explore Africa’s Economic Data <br> <em>— with Intelligence</em></h1>
+            <p>Uncover insights hidden in public data and make informed decisions faster than ever. With Bimi, you can explore, visualize, and validate information with ease.</p>
+            <div class="hero-buttons">
+                <a href="https://bimi.budgit.org" class="try-free">Try for free</a>
+                <a href="https://bimi.budgit.org" class="get-started">Get Started For Free</a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="assets/AI HP.png" alt="Mobile App Preview">
+            <div class="stats">
+                <div class="stat-box light">
+                    <img src="assets/bg1.jpg" alt="AI Image">
+                    <p>Artificial Intelligence</p>
+                </div>
+                <div class="stat-box">
+                    <img src="assets/bg2.jpg" alt="Countries Image">
+                    <p>56+ <br> <span>Countries</span></p>
+                </div>
+                <div class="stat-box dark">
+                    <img src="assets/bg1.jpg" alt="Data Image">
+                    <p>129 million ↑ <br> <span>Data</span></p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <script>
+        document.querySelector(".login").addEventListener("click", function() {
+            alert("Login button clicked");
+        });
+        document.querySelector(".signup").addEventListener("click", function() {
+            alert("Sign Up button clicked");
+        });
 
-  <!-- <section class="reveal-section">
-    <div class="reveal-text">BIMI</div> -->
-  <!-- </section> -->
-  
-  <script src="script.js"></script>
+        // Cursor movement script
+        const cursor = document.querySelector('.cursor');
+        document.addEventListener('mousemove', e => {
+            cursor.style.left = e.pageX + 'px';
+            cursor.style.top = e.pageY + 'px';
+        });
+    </script>
 </body>
 </html>
