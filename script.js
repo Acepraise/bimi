@@ -1,26 +1,26 @@
-document.querySelector(".login").addEventListener("click", function() {
-    alert("Login button clicked");
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('DOM loaded');
+
+    const searchInput = document.querySelector('.search-input');
+    const searchButton = document.querySelector('.search-button');
+    console.log('Elements found:', { searchInput, searchButton });
+
+    function redirectToChat() {
+        console.log('Redirecting to chat');
+        window.location.href = 'https://bimi.budgit.org/chat';
+    }
+
+    if (searchButton) {
+        searchButton.addEventListener('click', redirectToChat);
+    }
+
+    if (searchInput) {
+        searchInput.addEventListener('keypress', function(event) {
+            console.log('Key pressed:', event.key);
+            if (event.key === 'Enter') {
+                redirectToChat();
+            }
+        });
+    }
 });
-document.querySelector(".signup").addEventListener("click", function() {
-    alert("Sign Up button clicked");
-});
-
-// Cursor movement script
-const cursor = document.querySelector('.cursor');
-let mouseX = 0, mouseY = 0;
-let cursorX = 0, cursorY = 0;
-
-document.addEventListener('mousemove', e => {
-    mouseX = e.pageX;
-    mouseY = e.pageY;
-});
-
-function animateCursor() {
-    cursorX += (mouseX - cursorX) * 0.05; // Slower movement
-    cursorY += (mouseY - cursorY) * 0.05; // Slower movement
-    cursor.style.left = cursorX + 'px';
-    cursor.style.top = cursorY + 'px';
-    requestAnimationFrame(animateCursor);
-}
-
-animateCursor();
+onclick
