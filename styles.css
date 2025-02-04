@@ -1,3 +1,238 @@
+/* Global Styles */
+:root {
+    --primary-color: #0a3758;
+    --secondary-color: #06746e;
+    --text-color: #202124;
+    --light-gray: #dfecf0;
+    --dark-gray: #06746e;
+}
+
+body {
+    font-family: 'Google Sans', Arial, sans-serif;
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* Header Styles */
+.main-header {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    background: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar-brand {
+    font-weight: 500;
+    color: var(--primary-color) !important;
+}
+
+.navbar-brand img {
+    height: 85px; /* Increase the height of the logo */
+    width: auto; /* Maintain aspect ratio */
+}
+
+.nav-link {
+    font-weight: 500;
+    color: var(--dark-gray) !important;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: var(--primary-color) !important;
+}
+
+/* Hero Section */
+.hero {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+.hero h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+.hero .lead {
+    font-size: 1.25rem;
+    color: var(--dark-gray);
+    margin-bottom: 2rem;
+}
+
+/* Search Container */
+.search-container {
+    max-width: 600px;
+    margin: 0 auto;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.search-input {
+    flex: 1;
+    padding: 1rem;
+    border: 2px solid var(--primary-color);
+    border-radius: 30px;
+    font-size: 1.1rem;
+    outline: none;
+    transition: box-shadow 0.3s ease;
+}
+
+.search-button {
+    margin-left: -40px;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: var(--primary-color);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    .search-container {
+        max-width: 100%;
+        padding: 0 1rem;
+    }
+
+    .search-input {
+        padding: 0.75rem 2.5rem 0.75rem 1rem;
+        font-size: 1rem;
+    }
+
+    .search-button {
+        margin-right: 20px;
+    }
+}
+
+/* Topics Section */
+.topics {
+    padding: 80px 0;
+}
+
+.topic-card {
+    margin-bottom: 30px;
+}
+
+.card {
+    border: none;
+    border-radius: 12px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.card-body {
+    padding: 2rem;
+    text-align: center;
+}
+
+.card .material-icons {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+/* Center align Explore Topics and Bimi Tools headings */
+.topics h2, .tools h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Reduce margin between card bodies in Explore Topics and Bimi Tools */
+.topics .card-body, .tools .card-body {
+    margin-bottom: 15px;
+}
+
+/* Tools Section */
+.tools {
+    padding: 80px 0;
+}
+
+.tool-item {
+    text-align: center;
+    padding: 2rem;
+    margin-bottom: 30px;
+    background: white;
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+}
+
+.tool-item:hover {
+    transform: translateY(-5px);
+}
+
+.tool-item .material-icons {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+/* Footer */
+.footer {
+    background: var(--light-gray);
+    padding: 60px 0;
+    margin-top: 80px;
+}
+
+.footer h4 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+}
+
+.footer ul li {
+    margin-bottom: 0.5rem;
+}
+
+.footer a {
+    color: var(--dark-gray);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer a:hover {
+    color: var(--primary-color);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .search-container {
+        max-width: 100%;
+        padding: 0 1rem;
+    }
+
+    .search-input {
+        padding: 0.75rem 2.5rem 0.75rem 1rem;
+        font-size: 1rem;
+    }
+
+    .search-button {
+        right: 5px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    
+    .tool-item {
+        margin-bottom: 20px;
+    }
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -278,4 +513,16 @@ body:hover .cursor {
     width: 30px;
     height: 30px;
     border: 2px solid #06746e;
+}
+
+/* Reduce gap between nav link texts */
+.navbar-nav {
+    gap: 5px;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    .navbar-nav {
+        gap: 2px;
+    }
 }
